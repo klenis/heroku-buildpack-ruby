@@ -21,10 +21,10 @@ class LanguagePack::Helpers::YarnInstaller
   def install
     Dir.mktmpdir do |dir|
       Dir.chdir(dir) do
-        @fetcher.fetch_untar(@url, "dist")
+        @fetcher.fetch_untar(@url, "bin")
       end
 
-      FileUtils.mv("#{dir}/dist", name)
+      FileUtils.mv("#{dir}/bin", name)
     end
   end
 end
